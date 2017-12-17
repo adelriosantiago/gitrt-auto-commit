@@ -8,7 +8,7 @@ var fs = require('fs'),
   nodegit = require("nodegit");
 
 //Default settings
-var settings = { path: ".", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
+var settings = { path: "./repo", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
 
 var raiseEvent = {
   open: function() {},
@@ -29,8 +29,6 @@ function run(opts) {
   
   nodegit.Repository.open(path.join(__dirname, settings.path)).then(function(repo) {
     var index, oid;
-    
-    console.log("path", path.join(__dirname, settings.path));
     
     raiseEvent.open();
     
@@ -71,8 +69,6 @@ function run(opts) {
     
     statusCheck();
   }).catch(function(err) {
-
-    console.log("err", err);
     raiseEvent.error();
   });
   

@@ -1,13 +1,13 @@
 var autoCommit = require('./index.js');
 
-autoCommit.run({ path: "example-repo" })
+autoCommit.run()
   .on('error', function() {
-    console.log("Error opening file");
+    console.log("Error opening repository, please check the 'path' setting");
   })
   .on('open', function() {
-    console.log("Repo open");
+    console.log("Repository open, starting auto-commit");
   })
   .on('commit', function() {
-    console.log("Commit done");
+    console.log("Change detected, commiting");
   })
 
