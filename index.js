@@ -7,10 +7,23 @@ var fs = require('fs'),
   nodegit = require("nodegit");
 
 //Default options
-var defaultOptions = { path: "./example-repo/", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
+var defaultOptions = { path: "./example-repso/", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
 
 function options(opts) {
   defaultOptions = _.merge(defaultOptions, opts);
+}
+
+var events = {
+  open: function() {},
+  error: function() {}
+}
+
+var actionFn = function() {};
+
+var eventSetters = {
+  action: function(myFn) {
+    actionFn = myFn;
+  }
 }
 
 function run() {
@@ -55,9 +68,13 @@ function run() {
     }
     
     statusCheck();
-  }).catch(function(e) {
-    console.log("Error opening repo", e);
+  }).catch(function(err) {
+
+    console.log("err", err);
+    actionFn();
   });
+  
+  return eventSetters;
 }
 
 module.exports = {

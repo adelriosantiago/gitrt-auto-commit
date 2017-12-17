@@ -2,4 +2,7 @@
 
 var autoCommit = require('./index.js');
 
-autoCommit.run();
+autoCommit.run()
+  .action(function() {
+    console.log("our action");
+  });
