@@ -29,6 +29,8 @@ function run(opts) {
   nodegit.Repository.open(path.join(__dirname, settings.path)).then(function(repo) {
     var index, oid;
     
+    console.log("path", path.join(__dirname, settings.path));
+    
     raiseEvent.open();
     
     var statusCheck = function() {
