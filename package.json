@@ -1,6 +1,6 @@
 {
   "name": "gitrt-auto-commit",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A tool to auto-commit every N milliseconds. Non GIT-CLI dependent.",
   "main": "index.js",
   "scripts": {
