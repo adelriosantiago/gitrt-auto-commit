@@ -5,13 +5,10 @@
 var fs = require('fs'),
   path = require('path'),
   _ = require('lodash'),
-  caller = require('caller'),
   nodegit = require("nodegit");
 
 //Default settings
-var settings = { path: "./repo", interval: 1000, message: "GitRT auto commit" },
-  callerPath = caller(),
-  callerDir = callerPath.substring(0, callerPath.lastIndexOf('/') + 1);
+var settings = { path: './repo', interval: 1000, message: "GitRT auto commit" };
 
 var raiseEvent = {
   open: function() {},
@@ -30,7 +27,7 @@ var eventSetters = {
 function run(opts) {
   settings = _.merge(settings, opts);
   
-  nodegit.Repository.open(path.join(callerDir, settings.path)).then(function(repo) {
+  nodegit.Repository.open(path.join(settings.path)).then(function(repo) {
     var index, oid;
     
     raiseEvent.open();
