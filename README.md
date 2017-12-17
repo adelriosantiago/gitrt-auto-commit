@@ -27,4 +27,4 @@ Will auto-commit only if changes are found. The folder must be a valid .git repo
 
 ## License
 
-GNU 3 © [@adelriosantiago](https://twitter.com/adelriosantiago)
+GNU v3.0 © [@adelriosantiago](https://twitter.com/adelriosantiago)
