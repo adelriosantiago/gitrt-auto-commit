@@ -10,7 +10,8 @@ var fs = require('fs'),
 
 //Default settings
 var settings = { path: "./repo", interval: 1000, message: "GitRT auto commit" },
-  callerDir = caller().substring(0, a.lastIndexOf('/') + 1);
+  callerPath = caller(),
+  callerDir = callerPath.substring(0, callerPath.lastIndexOf('/') + 1);
 
 var raiseEvent = {
   open: function() {},
