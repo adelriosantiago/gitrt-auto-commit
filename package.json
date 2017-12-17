@@ -1,7 +1,7 @@
 {
   "name": "gitrt-auto-commit",
   "version": "1.0.12",
-  "description": "JavaScript Object Notation to FileSystem Object Notation",
+  "description": "A tool to auto-commit every N milliseconds. Non GIT-CLI dependent.",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
