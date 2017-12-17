@@ -7,22 +7,22 @@ var fs = require('fs'),
   nodegit = require("nodegit");
 
 //Default options
-var defaultOptions = { path: "./example-repso/", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
+var defaultOptions = { path: "./example-repox/", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
 
 function options(opts) {
   defaultOptions = _.merge(defaultOptions, opts);
 }
 
-var events = {
+var raiseEvent = {
   open: function() {},
   error: function() {}
 }
 
-var actionFn = function() {};
-
 var eventSetters = {
-  action: function(myFn) {
-    actionFn = myFn;
+  on: function(event, myFn) {
+    raiseEvent[event] = myFn;
+    
+    return this;
   }
 }
 
@@ -71,7 +71,7 @@ function run() {
   }).catch(function(err) {
 
     console.log("err", err);
-    actionFn();
+    raiseEvent.error();
   });
   
   return eventSetters;

@@ -3,6 +3,9 @@
 var autoCommit = require('./index.js');
 
 autoCommit.run()
-  .action(function() {
-    console.log("our action");
-  });
+  .on('error', function() {
+    console.log("Error opening file");
+  })
+  .on('open', function() {
+    console.log("Repo open");
+  })
