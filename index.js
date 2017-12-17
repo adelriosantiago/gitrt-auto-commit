@@ -5,7 +5,7 @@
 var fs = require('fs');
 
 function run() {
-  console.log("Test");
+  console.log("test");
 }
 
 module.exports = {

@@ -17,9 +17,10 @@
     "real-time",
     "auto",
     "autocommit",
-    "auto-commit"    
+    "auto-commit"
   ],
   "dependencies": {
+    "nodegit": "^0.20.3"
   },
   "author": "@adelriosantiago",
   "license": "GNU 3",
