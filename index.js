@@ -12,6 +12,7 @@ var settings = { path: ".", interval: 1000, author: {}, commiter: {}, message: "
 
 var raiseEvent = {
   open: function() {},
+  commit: function() {},
   error: function() {}
 }
 
@@ -35,8 +36,6 @@ function run(opts) {
     
     var statusCheck = function() {
       setInterval(function() {
-        console.log("c interval");
-        
         repo.getStatus().then(function(status) {
           
           if (status.length <= 0) return;
@@ -62,6 +61,8 @@ function run(opts) {
         }).then(function(parent) {
           var author = nodegit.Signature.default(repo),
             committer = nodegit.Signature.now("GitRT", "GitRT");
+            
+            raiseEvent.commit();
             
           return repo.createCommit("HEAD", author, committer, settings.message, oid, [parent]);
         })

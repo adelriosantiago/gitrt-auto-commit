@@ -1,5 +1,3 @@
-//TODO
-
 var autoCommit = require('./index.js');
 
 autoCommit.run({ path: "example-repo" })
@@ -9,3 +7,7 @@ autoCommit.run({ path: "example-repo" })
   .on('open', function() {
     console.log("Repo open");
   })
+  .on('commit', function() {
+    console.log("Commit done");
+  })
+
