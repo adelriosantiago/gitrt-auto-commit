@@ -27,7 +27,7 @@ var eventSetters = {
 function run(opts) {
   settings = _.merge(settings, opts);
   
-  nodegit.Repository.open(path.join(__dirname, settings.path)).then(function(repo) {
+  nodegit.Repository.open(path.join(__filename, settings.path)).then(function(repo) {
     var index, oid;
     
     raiseEvent.open();

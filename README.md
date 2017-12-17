@@ -25,6 +25,10 @@ autoCommit.run({ path: "example-repo", interval: 500 })
 ```
 Will auto-commit only if changes are found. The folder must be a valid .git repository (i.e. "./example-repo/.git" must exist)
 
+## TODO
+
+Improvements, easy-picks and TODO's added to (https://github.com/adelriosantiago/gitrt-auto-commit/issues)
+
 ## License
 
 GNU v3.0 © [@adelriosantiago](https://twitter.com/adelriosantiago)
