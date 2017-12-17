@@ -27,7 +27,7 @@ Will auto-commit only if changes are found. The folder must be a valid .git repo
 
 ## Todo's
 
-Improvements, easy-picks and TODO's added to https://github.com/adelriosantiago/gitrt-auto-commit/issues
+Improvements, easy-picks and todo's added to https://github.com/adelriosantiago/gitrt-auto-commit/issues
 
 ## License
 
