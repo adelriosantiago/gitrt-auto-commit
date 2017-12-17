@@ -4,14 +4,11 @@
 
 var fs = require('fs'),
   path = require('path'),
+  _ = require('lodash'),
   nodegit = require("nodegit");
 
-//Default options
-var defaultOptions = { path: "./example-repox/", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
-
-function options(opts) {
-  defaultOptions = _.merge(defaultOptions, opts);
-}
+//Default settings
+var settings = { path: ".", interval: 1000, author: {}, commiter: {}, message: "GitRT auto commit" };
 
 var raiseEvent = {
   open: function() {},
@@ -26,11 +23,13 @@ var eventSetters = {
   }
 }
 
-function run() {
-  nodegit.Repository.open(path.join(__dirname, defaultOptions.path)).then(function(repo) {
+function run(opts) {
+  settings = _.merge(settings, opts);
+  
+  nodegit.Repository.open(path.join(__dirname, settings.path)).then(function(repo) {
     var index, oid;
     
-    console.log("Repository open", repo);
+    raiseEvent.open();
     
     var statusCheck = function() {
       setInterval(function() {
@@ -62,9 +61,9 @@ function run() {
           var author = nodegit.Signature.default(repo),
             committer = nodegit.Signature.now("GitRT", "GitRT");
             
-          return repo.createCommit("HEAD", author, committer, defaultOptions.message, oid, [parent]);
+          return repo.createCommit("HEAD", author, committer, settings.message, oid, [parent]);
         })
-      }, defaultOptions.interval);
+      }, settings.interval);
     }
     
     statusCheck();
