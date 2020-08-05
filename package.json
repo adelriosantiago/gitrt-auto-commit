@@ -20,8 +20,7 @@
     "auto-commit"
   ],
   "dependencies": {
-    "lodash": "^4.17.4",
-    "nodegit": "^0.20.3"
+    "simple-git": "^2.17.0"
   },
   "author": "@adelriosantiago",
   "license": "GNU 3",
