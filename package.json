@@ -4,6 +4,7 @@
   "description": "A tool to auto-commit every N milliseconds. Non GIT-CLI dependent.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "node test.js"
   },
   "repository": {
