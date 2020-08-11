@@ -1,11 +1,14 @@
 {
   "name": "gitrt-auto-commit",
   "version": "1.0.19",
-  "description": "A tool to auto-commit every N milliseconds. Non GIT-CLI dependent.",
+  "description": "A tool to auto-commit every N milliseconds.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "node test.js"
+  },
+  "bin": {
+    "auto-commit": "./bin/auto-commit.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
     "auto-commit"
   ],
   "dependencies": {
+    "meow": "^7.0.1",
     "simple-git": "^2.17.0"
   },
   "author": "@adelriosantiago",
