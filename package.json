@@ -4,8 +4,7 @@
   "description": "A tool to auto-commit every N milliseconds.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
+    "start": "node index.js"
   },
   "bin": {
     "auto-commit": "./bin/auto-commit.js"
