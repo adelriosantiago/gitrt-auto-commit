@@ -26,6 +26,8 @@ const run = (folder, flags) => {
   }
   const git = simpleGit(gitSettings)
 
+  console.log(`Auto-commit started on ${gitSettings.baseDir}`)
+
   timer = setTimeout(async function myTimer() {
     const status = await git.status()
 
