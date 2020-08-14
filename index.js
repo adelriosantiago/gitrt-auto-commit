@@ -35,7 +35,7 @@ const run = (folder, flags) => {
       await git.add("./*")
       await git.commit(settings.commitMsg)
       if (!settings.silent)
-        console.log(`Git auto-commit with message: "${commitMsg}"`)
+        console.log(`Git auto-commit with message: "${settings.commitMsg}"`)
     }
     timer = setTimeout(myTimer, settings.timeout)
   }, settings.timeout)

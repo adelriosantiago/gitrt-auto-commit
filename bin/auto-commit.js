@@ -27,6 +27,10 @@ const cli = meow(
         type: "boolean",
         alias: "t",
       },
+      commitMsg: {
+        type: "string",
+        alias: "m",
+      },
       absolutePath: {
         type: "string",
         alias: "a",
