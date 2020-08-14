@@ -13,12 +13,13 @@ const cli = meow(
  
     Options
       --timeout, -t Timeout [1000]
+      --commitMsg, -m Commit message ["auto-commit"]
       --absolutePath, -a Use absolute path [false]
       --silent, -s Silent [false]
  
     Examples
       $ auto-commit ./my-repository --timeout 2000 --silent
-      $ auto-commit ./my-repository -t 250 -s -a
+      $ auto-commit C:/path/to/my-repository -t 250 -s -a -m "auto"
   `,
   {
     flags: {

@@ -9,6 +9,7 @@ let timer
 const run = (folder, flags) => {
   let settings = {
     path: folder,
+    commitMsg: "auto-commit",
     absolutePath: false,
     timeout: 1000,
     silent: false,
@@ -30,8 +31,9 @@ const run = (folder, flags) => {
 
     if (status.modified.length !== 0) {
       await git.add("./*")
-      await git.commit(`gitrt-auto-commit on ${new Date()}`)
-      if (!settings.silent) console.log("Git commit done")
+      await git.commit(settings.commitMsg)
+      if (!settings.silent)
+        console.log(`Git auto-commit with message: "${commitMsg}"`)
     }
     timer = setTimeout(myTimer, settings.timeout)
   }, settings.timeout)
