@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 "use strict"
 
-//Test with: node ./bin/auto-commit.js example-repo
-
 const meow = require("meow")
 const script = require("../index.js")
 
@@ -24,19 +22,23 @@ const cli = meow(
   {
     flags: {
       timeout: {
-        type: "boolean",
+        type: "number",
+        default: 1000,
         alias: "t",
       },
       commitMsg: {
         type: "string",
+        default: "auto-commit",
         alias: "m",
       },
       absolutePath: {
-        type: "string",
+        type: "boolean",
+        default: false,
         alias: "a",
       },
       silent: {
         type: "boolean",
+        default: false,
         alias: "s",
       },
     },

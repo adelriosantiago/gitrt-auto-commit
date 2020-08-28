@@ -7,14 +7,7 @@ const simpleGit = require("simple-git")
 let timer
 
 const run = (folder, flags) => {
-  let settings = {
-    path: folder,
-    commitMsg: "auto-commit",
-    absolutePath: false,
-    timeout: 1000,
-    silent: false,
-  }
-  Object.assign(settings, flags)
+  const settings = { path: folder, ...flags }
   if (!settings.path) throw "Path parameter is required"
 
   let gitSettings = {
