@@ -23,8 +23,8 @@
     "auto-commit"
   ],
   "dependencies": {
-    "meow": "^7.0.1",
-    "simple-git": "^2.17.0"
+    "meow": "^7.1.1",
+    "simple-git": "^2.20.1"
   },
   "author": "@adelriosantiago",
   "license": "GNU 3",

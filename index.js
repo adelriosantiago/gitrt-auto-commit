@@ -31,7 +31,7 @@ const run = (folder, flags) => {
         console.log(`Git auto-commit with message: "${settings.commitMsg}"`)
     }
     timer = setTimeout(myTimer, settings.timeout)
-  }, settings.timeout)
+  }, 0)
 }
 
 const stop = () => {
