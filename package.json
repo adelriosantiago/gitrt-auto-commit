@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "meow": "^7.1.1",
-    "simple-git": "^2.20.1"
+    "simple-git": "^3.16.0"
   },
   "author": "@adelriosantiago",
   "license": "GNU 3",
